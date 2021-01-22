@@ -1,0 +1,19 @@
+
+:root {
+    --main-text-color: #e6e6e6;
+    --accent-text-color: #1eff4f;
+  
+    --main-background-color: #181818; /*canvas & backgrounds*/
+    --light-background-color: #d4c814; /*hover/selected color on canvas & menus*/
+    --dark-background-color: #0a0a0a;
+    --active-background-color: #30330e; /*context menu outline and "select image" lol*/ /*maybe should be for input fields/selected with text*/
+  
+    --main-accent-color: #ada30b;
+    --light-accent-color: #00ff22;
+    --dark-accent-color: #c0bd02;
+    --active-accent-color: #c0bd02;
+
+
+    --dark-alert-color: #791313;
+    --light-alert-color: #ad2020;
+  }

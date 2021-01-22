@@ -210,7 +210,7 @@ const store = new Vuex.Store({
     },
     closeAssignedTagsMenu(state) {
       state.events.assignedTagsMenu.active = false
-      state.events.assignedTagsMenu.id = null
+      state.events.assignedTagsMenu.arg = null
       state.events.assignedTagsMenu.event = null
     },
     contextMenu(state, payload) {
@@ -250,6 +250,11 @@ const store = new Vuex.Store({
     deleteTag(state, payload){
       const removeIndex = state.tags.findIndex(tag => tag.id === payload.id)
       state.tags.splice(removeIndex, 1)
+
+      state.gridElements.forEach(element => {
+        element.tagsList = element.tagsList.filter(tag => tag !== payload.id)
+      });
+
     }
   },
   actions: {                                  // FOR ASYNC ACTIONS

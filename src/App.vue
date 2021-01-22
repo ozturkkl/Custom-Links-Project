@@ -83,7 +83,7 @@ export default {
     window.addEventListener("resize", this.closeContextMenu);
     window.addEventListener("resize", this.closeColorPicker);
     window.addEventListener("resize", this.closeEditingFields);
-    window.addEventListener("resize", this.closeAssignedTagsMenu)
+    window.addEventListener("resize", this.closeAssignedTagsMenu);
 
     importCss(this.$store.state.theme)
 

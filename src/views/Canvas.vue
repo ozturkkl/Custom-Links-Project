@@ -58,8 +58,6 @@
 <script>
 import VueGridLayout from "vue-grid-layout";
 import imgUrlFromBuffer from "@/js/img/imgUrlFromBuffer.js";
-import shortLabel from "@/js/shortLabel.js";
-import TagsWrapper from "@/components/TagsWrapper.vue";
 
 export default {
   data() {
@@ -196,7 +194,7 @@ export default {
       this.$store.commit("assignedTagsMenu", {
         element,
         event
-      });
+      })
     }
   },
   created: function () {

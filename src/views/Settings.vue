@@ -6,6 +6,7 @@
         <option value="dark">Dark</option>
         <option value="light">Light</option>
         <option value="darkRed">Dark Red</option>
+        <option value="hufflepuff">Hufflepuff</option>
       </select>
     </div>
     <!--<button @click="getFavicon('https://duckduckgo.com/')">getFavicon Text</button>-->
