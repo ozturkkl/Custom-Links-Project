@@ -98,6 +98,11 @@ const store = new Vuex.Store({
         active: false,
         arg: null
       },
+      hoverLabel: {
+        active: false,
+        arg: null,
+        event: null
+      },
     },
   },
   mutations: {
@@ -236,6 +241,18 @@ const store = new Vuex.Store({
       state.events.colorPicker.active = false
       state.events.colorPicker.arg = null
       state.events.colorPicker.event = null
+    },
+    // Hover Label
+    showHoverLabel(state, payload) {
+      state.events.hoverLabel.active = true
+      state.events.hoverLabel.arg = payload
+      state.events.hoverLabel.event = payload.event
+      console.log("from state: payload.event: "+ payload.event + "in the state: "+ state.events.hoverLabel.event)
+    },
+    closeHoverLabel(state) {
+      state.events.hoverLabel.active = false
+      state.events.hoverLabel.id = null
+      state.events.hoverLabel.event = null
     },
   },
   getters: {

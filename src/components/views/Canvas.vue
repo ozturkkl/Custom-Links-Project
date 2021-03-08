@@ -61,7 +61,7 @@
           <div class="img-container">
             <img v-bind:src="getElementImg(element.id, element.img)" />
           </div>
-          <label class="label">{{ element.label }}</label>
+          <label class="label" @mouseover="labelHovered(element.label)" @mouseleave="labelUnhovered()">{{ element.label }}</label>
         </div>
       </grid-item>
     </div>
@@ -86,6 +86,7 @@ export default {
       },
       movingElement: null,
       containerWidth: 0,
+      labelHoverTimeout: null,
     };
   },
   computed: {
@@ -101,6 +102,24 @@ export default {
     GridItem: VueGridLayout.GridItem,
   },
   methods: {
+    labelHovered(label) {
+      var theLabel = label;
+      var theEvent = event;
+      console.log("theLabel: "+theLabel+" theEvent: "+theEvent)
+      this.labelHoverTimeout = setTimeout( () => {
+        console.log("onTimeout activation: "+this.$store.state.events.hoverLabel.event);
+        this.$store.state.events.hoverLabel.event = theEvent;
+        console.log("onTimeout activation: post-setting event in the state: "+this.$store.state.events.hoverLabel.event);
+        this.$store.commit("showHoverLabel", {
+        label: theLabel,
+        event: theEvent,
+      });
+      }, 1000)
+    },
+    labelUnhovered() {
+      clearTimeout(this.labelHoverTimeout);
+      this.$store.commit("closeHoverLabel");
+    },
     updateGrid: function () {
       const links = this.$store.state.links;
       this.layout = [];

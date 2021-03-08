@@ -8,6 +8,7 @@
       <ContextMenu v-if="this.$store.state.events.contextMenu.active" />
       <ColorPicker v-if="this.$store.state.events.colorPicker.active" />
       <AssignedTagsMenu v-if="this.$store.state.events.assignedTagsMenu.active" />
+      <HoverLabel v-if="this.$store.state.events.hoverLabel.active" />
     </v-app>
   </div>
 </template>
@@ -22,6 +23,7 @@ import ColorPicker from "@/components/floating/ColorPicker.vue";
 import AssignedTagsMenu from "@/components/floating/AssignedTagsMenu.vue";
 import importCss from "@/js/helper/importCss.js";
 import closeMenus from "@/js/helper/closeMenus.js";
+import HoverLabel from "@/components/floating/HoverLabel.vue";
 
 export default {
   data() {
@@ -37,7 +39,8 @@ export default {
     Alert,
     ContextMenu,
     ColorPicker,
-    AssignedTagsMenu
+    AssignedTagsMenu,
+    HoverLabel
   },
   methods: {
     closeMenus
@@ -167,6 +170,14 @@ html {
   transition: background-color ease-in-out 100ms;
   border-radius: 5px;
 }
+
+/* .showFullNameOnHover:hover {
+  overflow: visible !important; 
+  white-space: normal !important;
+  
+  z-index: unset !important;
+  color: red;
+} */
 
 input {
   padding: 10px;

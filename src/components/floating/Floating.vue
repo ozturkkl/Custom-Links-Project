@@ -18,6 +18,7 @@ export default {
       event: MouseEvent
   },
   mounted: function () {
+    console.log("from Floating: "+event)
     this.setContainerPosition(event);
   },
   methods: {
