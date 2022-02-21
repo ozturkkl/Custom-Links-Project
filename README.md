@@ -7,6 +7,8 @@ Want to [know more](https://linktailor.app/#Features)? Watch a [YouTube demo](ht
 
 ### [visit linktailor.app](https://linktailor.app/)
 
+### [IT-Expo Website](https://itexpo.live/seniors/62)
+
 ## Getting Started
 For developers looking to work with the code:
 ```
